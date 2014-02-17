@@ -1317,7 +1317,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
         }
         else {
 		// Change this to a block height in the future which would probably suit you a few blocks from the current block considering the diff.
-                if (pindexLast->nHeight+1 >= 27000) { DiffMode = 2; }
+                if (pindexLast->nHeight+1 >= 26850) { DiffMode = 2; }
         }
 
         if                (DiffMode == 1) { return GetNextWorkRequired_V1(pindexLast, pblock); } //legacy diff mode
