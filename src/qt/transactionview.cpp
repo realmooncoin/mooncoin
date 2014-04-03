@@ -391,7 +391,7 @@ void TransactionView::viewOnMoonchain()
     QModelIndexList selection = transactionView->selectionModel()->selectedRows();
     if(!selection.isEmpty())
     {
-        QString format("http://moonchain.info/tx/");
+        QString format("http://mooncoin.info/abe/tx/");
         format += selection.at(0).data(TransactionTableModel::TxIDRole).toString();
 
         QDesktopServices::openUrl(QUrl(format));
