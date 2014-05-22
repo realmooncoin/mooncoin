@@ -1090,29 +1090,31 @@ int static generateMTRandom(unsigned int s, int range)
 
 int64 static GetBlockValue(int nHeight, int64 nFees, uint256 prevHash)
 {
-    int64 nSubsidy = 29531 * COIN; // the lunar cycle is 29.53059 days, so we rounded it up
-
+   
+    int64 nSubsidy = 10000 * COIN; 
+    
     std::string cseed_str = prevHash.ToString().substr(7,7);
     const char* cseed = cseed_str.c_str();
     long seed = hex2long(cseed);
 
-	if(nHeight <= 100000) {
-                nSubsidy = (1 + generateMTRandom(seed, 1999999)) * COIN;
+    if(nHeight <= 100000) {
+                nSubsidy = 500000 * COIN;
         } else if(nHeight > 193076 && nHeight < 203158) {
                 nSubsidy = 2519841 * COIN; // for _roughly_ one week, the cost of the Apollo program will be paid back -- 25.4bn MOON!
         } else if(nHeight <= 203518) {
-                nSubsidy = (1 + generateMTRandom(seed, 999999)) * COIN;
+                nSubsidy = 250000 * COIN;
         } else if(nHeight <= 250000) {
-                nSubsidy = (1 + generateMTRandom(seed, 599999)) * COIN;
+                nSubsidy = 150000 * COIN;
         } else if(nHeight <= 300000) {
-                nSubsidy = (1 + generateMTRandom(seed, 349999)) * COIN;
+                nSubsidy = 87500 * COIN;
         } else if(nHeight <= 350000) {
-                nSubsidy = (1 + generateMTRandom(seed, 174999)) * COIN;
+                nSubsidy = 43750 * COIN;
         } else if(nHeight <= 375000) {
-                nSubsidy = (1 + generateMTRandom(seed, 99999)) * COIN;
+                nSubsidy =  25000 * COIN;
         } else if(nHeight <= 384400) {
-                nSubsidy = (1 + generateMTRandom(seed, 49999)) * COIN;
+                nSubsidy =  12500 * COIN;
         }
+
 
 	if (nHeight % 29531 == 0) {
                 // a prize for ever lunar cycle
